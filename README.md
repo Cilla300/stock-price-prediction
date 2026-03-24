@@ -1,6 +1,7 @@
 📈 Stock Price Prediction using STFT and CNN
 👩‍💻 Student Details
-Name: Archana K Register Number: TCR24CS014
+Name: Cilla Elsa Binoy 
+Register Number: TCR24CS021
 
 📌 Project Description
 This project demonstrates how financial time series data can be analyzed using signal processing and deep learning techniques.
