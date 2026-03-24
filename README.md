@@ -1,78 +1,198 @@
-📈 Stock Price Prediction using STFT and CNN
-
-
+# 📈 Pattern Recognition for Financial Time Series Forecasting
 
 👩‍💻 Student Details
-Name: Cilla Elsa Binoy 
-Register Number: TCR24CS021
+Name: Cilla Elsa Binoy Register Number: TCR24CS021
 
-📌 Project Description
-This project demonstrates how financial time series data can be analyzed using signal processing and deep learning techniques.
+## 🧠 Project Overview
 
-Stock price data is transformed into a time–frequency representation (spectrogram) using the Short-Time Fourier Transform (STFT). A Convolutional Neural Network (CNN) is then trained on this representation to predict future stock prices.
+This project explores how **time–frequency signal processing** and **deep learning (CNN)** can be used to predict stock prices from financial time series data.
 
-🎯 Objective
-Treat stock data as a signal
-Extract hidden patterns using STFT
-Use CNN for prediction
-Compare predicted vs actual prices
-📥 Inputs
-Stock price data of:
+Financial data such as stock prices are treated as **signals**, transformed into a **spectrogram (image)** using Short-Time Fourier Transform (STFT), and then fed into a **Convolutional Neural Network (CNN)** for prediction.
 
-RELIANCE.NS
-TCS.NS
-INFY.NS
-Data collected using Yahoo Finance
+---
 
-📤 Outputs
-📊 Time Series Plot
-Shows variation of stock prices over time.
+## 🎯 Objective
 
-Time Series
+* Convert financial time series data into a **time–frequency representation**
+* Extract hidden patterns using **spectrograms**
+* Train a **CNN model** to predict future stock prices
+* Evaluate model performance using **Mean Squared Error (MSE)**
 
-🌈 Spectrogram
-Represents time-frequency characteristics of stock data.
+---
 
-Spectrogram
+## 📊 Dataset
 
-📈 Prediction vs Actual
-Comparison between predicted and real stock prices.
+Stock data is collected using:
 
-Prediction
+* Yahoo Finance API (via `yfinance` library)
 
-⚙️ Technologies Used
-Python
-NumPy
-Pandas
-Matplotlib
-SciPy (STFT)
-TensorFlow / Keras
-yFinance API
-🧪 How to Run
-Step 1: Install dependencies
-pip install numpy pandas matplotlib scipy scikit-learn tensorflow yfinance
-Step 2: Run the program
-py -3.11 stock_project.py
-📊 Methodology
-Collect stock data
-Normalize data
-Apply STFT to generate spectrogram
-Prepare data for CNN
-Train CNN model
-Predict future stock prices
-Evaluate using MSE
-📈 Results
-Spectrogram reveals hidden patterns in stock data
-CNN model learns trends effectively
-Predicted values closely follow actual prices
-🧠 Conclusion
-This project shows that combining signal processing and deep learning provides an effective approach for financial time series forecasting.
+### Companies Used:
 
-📚 References
-Yahoo Finance
-IEEE Research Papers on Stock Prediction
-Deep Learning for Time Series Forecasting
-🚀 Future Improvements
-Use multiple features (volume, index, exchange rate)
-Improve CNN architecture
-Try LSTM models for better accuracy
+* RELIANCE.NS
+* TCS.NS
+* INFY.NS
+
+### Features:
+
+* Closing Price (primary signal used for modeling)
+
+---
+
+## ⚙️ Methodology
+
+### 1. Data Collection
+
+* Download historical stock data using `yfinance`
+
+### 2. Preprocessing
+
+* Extract closing prices
+* Normalize data using **MinMaxScaler**
+
+### 3. Signal Processing
+
+#### 🔹 Fourier Transform
+
+* Convert time-domain signal to frequency domain
+
+#### 🔹 Short-Time Fourier Transform (STFT)
+
+* Apply sliding window to analyze non-stationary signals
+
+#### 🔹 Spectrogram
+
+* Generate time–frequency representation:
+
+  * X-axis → Time
+  * Y-axis → Frequency
+  * Color → Energy
+
+---
+
+## 🧩 Model Architecture (CNN)
+
+* Input: Spectrogram images
+* Layers:
+
+  * Conv2D
+  * MaxPooling2D
+  * Flatten
+  * Dense (Fully Connected)
+* Output: Predicted stock price
+
+---
+
+## 🔄 Workflow Pipeline
+
+Time Series Data
+→ Normalization
+→ STFT
+→ Spectrogram
+→ CNN Model
+→ Prediction
+
+---
+
+## 🧪 Training & Testing
+
+* Data split into:
+
+  * 80% Training
+  * 20% Testing
+* Model trained using:
+
+  * Loss Function: Mean Squared Error (MSE)
+  * Optimizer: Adam
+
+---
+
+## 📈 Results
+
+### Outputs Generated:
+
+* Time Series Plot
+* Frequency Spectrum
+* Spectrogram Images
+* Actual vs Predicted Graph
+
+### Evaluation Metric:
+
+* Mean Squared Error (MSE)
+
+---
+
+## 📌 Key Insights
+
+* Financial data behaves like a **non-stationary signal**
+* Spectrogram reveals hidden patterns not visible in raw data
+* CNN can learn useful representations from spectrogram images
+
+---
+
+## 🛠️ Technologies Used
+
+* Python
+* NumPy
+* Pandas
+* Matplotlib
+* SciPy
+* Scikit-learn
+* TensorFlow / Keras
+* yFinance
+
+---
+
+## 🚀 How to Run
+
+1. Install required libraries:
+
+```
+pip install numpy pandas matplotlib yfinance scipy scikit-learn tensorflow
+```
+
+2. Run the script:
+
+```
+python project.py
+```
+
+3. Output:
+
+* Graphs will be displayed and saved as images
+* Model will print MSE
+
+---
+
+## ⚠️ Notes
+
+* Only closing price was used for simplicity
+* Model performance can improve with more features and data
+* Spectrogram visualization improved using logarithmic scaling
+
+---
+
+## 📚 References
+
+1. Y. Zhang & C. Aggarwal – Stock Market Prediction Using Deep Learning
+2. A. Tsantekidis – Deep Learning for Financial Time Series
+3. Hochreiter & Schmidhuber – LSTM (1997)
+4. Borovykh et al. – CNN for Time Series Forecasting
+
+---
+
+## 👩‍💻 Author
+
+* Your Name
+
+---
+
+## 📌 Conclusion
+
+This project demonstrates that:
+
+* Financial time series can be analyzed as signals
+* Time–frequency transformation is powerful
+* CNN models can effectively predict stock price trends
+
+---
+
