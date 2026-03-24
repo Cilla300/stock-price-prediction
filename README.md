@@ -1,4 +1,7 @@
 📈 Stock Price Prediction using STFT and CNN
+
+
+
 👩‍💻 Student Details
 Name: Cilla Elsa Binoy 
 Register Number: TCR24CS021
