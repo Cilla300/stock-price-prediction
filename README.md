@@ -180,12 +180,6 @@ python project.py
 
 ---
 
-## 👩‍💻 Author
-
-* Your Name
-
----
-
 ## 📌 Conclusion
 
 This project demonstrates that:
